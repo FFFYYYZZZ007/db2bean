@@ -14,6 +14,7 @@ public class DBUtil {
             //mysql
             if (dbType.equalsIgnoreCase("mysql")) {
                 Class.forName("com.mysql.jdbc.Driver");
+                url = url + "?useSSL=false";
             }
             //postgresql
             else if (dbType.equalsIgnoreCase("postgresql")) {
