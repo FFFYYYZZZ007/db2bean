@@ -1,16 +1,37 @@
-package top.fuyuaaa.db2bean.util;
+package main;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * @author: fuyuaaaaa
- * @description:
- * @program:
- * @creat: 2018-10-25 11:09
+ * @description: 字符串工具类
+ * @program: db2bean
+ * @creat: 2018-10-26 09:51
  **/
+public class StringUtil {
 
-public class UnderLine2CamelUtils {
+    public static void main(String[] args) {
+
+    }
+
+    /**
+     * 首字母大写
+     */
+    public static String upperCaseFirstChar(String str) {
+        String str1 = str.substring(0, 1).toUpperCase(); // 取字符串的首字母并大写
+        String str2 = str.substring(1); // 取字符串除首字母以外的字母
+        return str1 + str2;
+    }
+
+    /**
+     * 首字母小写
+     */
+    public static String lowerCaseFirstChar(String str) {
+        String str1 = str.substring(0, 1).toLowerCase();
+        String str2 = str.substring(1); // 取字符串除首字母以外
+        return str1 + str2;
+    }
 
     /**
      * 下划线转驼峰法(默认小驼峰)
@@ -70,22 +91,5 @@ public class UnderLine2CamelUtils {
             sb.append(matcher.end() == line.length() ? "" : "_");
         }
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        String line = "are_you_dou_bi_yellowcong";
-        //下划线转驼峰（大驼峰）
-        //AreYouDouBiYellowcong
-        String camel = underline2Camel(line, false);
-        System.out.println(camel);
-
-        //下划线转驼峰（小驼峰）
-        //areYouDouBiYellowcong
-        camel = underline2Camel(line);
-        System.out.println(camel);
-
-        //驼峰转下划线
-        //ARE_YOU_DOU_BI_YELLOWCONG
-        System.out.println(camel2Underline(camel));
     }
 }

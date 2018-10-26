@@ -1,7 +1,0 @@
-server:
-  port: 8123
-spring:
-  thymeleaf:
-    prefix: classpath:/templates/
-  resources:
-          static-locations: classpath:/,classpath:/static/
